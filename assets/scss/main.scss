@@ -6,9 +6,24 @@
   box-sizing: border-box;
 }
 
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: variables.$primary-text;
+  text-decoration: none;
+}
+
 ul,
 ol {
   list-style: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 
 html {
@@ -21,4 +36,8 @@ html {
 .container {
   max-width: 70rem;
   margin: 0 auto;
+}
+
+.postList {
+  margin: 3.2rem 0;
 }

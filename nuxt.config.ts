@@ -8,5 +8,5 @@ export default defineNuxtConfig({
       enabled: true,
     },
   },
-  modules: ['@pinia/nuxt'],
+  modules: ['@pinia/nuxt', '@nuxt/icon'],
 })

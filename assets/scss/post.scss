@@ -1,11 +1,7 @@
 @use './variables.scss' as variables;
 
 .post {
-  margin-top: 2.4rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1.2rem;
+  margin-bottom: 2.4rem;
 
   &:last-child {
     margin: 0;
@@ -13,12 +9,55 @@
 
   .postTitle {
     font-size: 3.2rem;
+    margin-bottom: 1.2rem;
   }
 
   .postBody {
     font-size: 2rem;
+    margin-bottom: 2.4rem;
   }
 
   .bottom {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    gap: 1.2rem;
+
+    .likeDislikeBtns {
+      display: flex;
+      gap: 0.2rem;
+
+      .dislike {
+        border-radius: 0 1.6rem 1.6rem 0;
+      }
+
+      .like {
+        border-radius: 1.6rem 0 0 1.6rem;
+      }
+
+      .dislike,
+      .like {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.6rem 1.2rem;
+        font-size: 1.4rem;
+        background-color: variables.$secondary-bg;
+
+        .amount {
+          margin-left: 0.4rem;
+          color: variables.$secondary-text;
+        }
+      }
+    }
+
+    .postLink {
+      font-size: 1.4rem;
+      color: variables.$accent-orange;
+    }
+
+    .date {
+      color: variables.$secondary-text;
+    }
   }
 }
