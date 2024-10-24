@@ -1,0 +1,9 @@
+$primary-bg: #fbfbfb;
+$primary-text: #1c1c1c;
+
+@mixin fillAvailableWidth {
+  width: 100%;
+  width: -moz-available;
+  width: -webkit-fill-available;
+  width: stretch;
+}

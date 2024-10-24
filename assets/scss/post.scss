@@ -1,0 +1,24 @@
+@use './variables.scss' as variables;
+
+.post {
+  margin-top: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.2rem;
+
+  &:last-child {
+    margin: 0;
+  }
+
+  .postTitle {
+    font-size: 3.2rem;
+  }
+
+  .postBody {
+    font-size: 2rem;
+  }
+
+  .bottom {
+  }
+}

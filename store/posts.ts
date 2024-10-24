@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 
-type Post = {
+export type Post = {
   id: number
   title: string
   body: string
@@ -13,53 +13,40 @@ type Post = {
   userId: number
 }
 
+const initialState: Post[] = []
+
 export const usePostsStore = defineStore('posts', {
   state: () => ({
-    posts: [
-      {
-        id: 1,
-        title: 'First Post',
-        content: 'This is the first post content.',
-        likes: 0,
-        dislikes: 0,
-        comments: [
-          { id: 1, text: 'Great post!', removed: false },
-          { id: 2, text: 'I disagree.', removed: false },
-        ],
-      },
-      {
-        id: 2,
-        title: 'Second Post',
-        content: 'This is the second post content.',
-        likes: 0,
-        dislikes: 0,
-        comments: [
-          { id: 1, text: 'Interesting view!', removed: false },
-          { id: 2, text: 'Needs more detail.', removed: false },
-        ],
-      },
-    ],
+    posts: initialState,
   }),
   actions: {
-    likePost(postId: number) {
+    async fetchPosts() {
+      const response = await fetch('https://dummyjson.com/posts?limit=5')
+      const result = await response.json()
+      this.posts = result.posts
+    },
+    addLikePost(postId: number) {
       const post = this.posts.find(p => p.id === postId)
       if (post) {
-        post.likes++
+        post.reactions.likes++
       }
     },
-    dislikePost(postId: number) {
+    removeLikePost(postId: number) {
       const post = this.posts.find(p => p.id === postId)
       if (post) {
-        post.dislikes++
+        post.reactions.dislikes--
       }
     },
-    removeComment(postId: number, commentId: number) {
+    addDislikePost(postId: number) {
       const post = this.posts.find(p => p.id === postId)
       if (post) {
-        const comment = post.comments.find(c => c.id === commentId)
-        if (comment) {
-          comment.removed = true
-        }
+        post.reactions.dislikes++
+      }
+    },
+    removeDislikePost(postId: number) {
+      const post = this.posts.find(p => p.id === postId)
+      if (post) {
+        post.reactions.dislikes--
       }
     },
   },

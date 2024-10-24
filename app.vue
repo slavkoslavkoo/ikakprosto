@@ -1,13 +1,21 @@
 <template>
-  <div>{{ template }}</div>
+  <main class="container">
+    <ul class="postList">
+      <Post v-for="post in posts" :key="post.id" :post="post" />
+    </ul>
+  </main>
 </template>
 
-<script setup></script>
+<script setup lang="ts">
+import Post from './components/Post.vue'
+import { usePostsStore } from './store/posts'
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+const postStore = usePostsStore()
+await callOnce(postStore.fetchPosts)
+
+const posts = postStore.posts
+</script>
+
+<style lang="scss">
+@use '~/assets/scss/main.scss';
 </style>
