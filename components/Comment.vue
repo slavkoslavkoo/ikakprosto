@@ -6,6 +6,10 @@
   <div class="body">
     <h3 class="name">{{ comment.user.fullName }}</h3>
     <p v-if="!isCommentDeleted" class="content">{{ comment.body }}</p>
+    <div v-else class="deletedText">
+      <p class="deleted">This comment has been deleted.</p>
+      <button @click="handleReturn" class="return" v-if="isCommentDeleted">Return</button>
+    </div>
 
     <div v-if="!isCommentDeleted" class="footer">
       <span class="date">Today</span>
@@ -21,6 +25,10 @@ const isCommentDeleted = ref(false)
 
 const handleDelete = () => {
   isCommentDeleted.value = true
+}
+
+const handleReturn = () => {
+  isCommentDeleted.value = false
 }
 
 const { comment } = defineProps<{ comment: Comment }>()
