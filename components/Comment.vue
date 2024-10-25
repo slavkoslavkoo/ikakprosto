@@ -8,7 +8,7 @@
     <p v-if="!isCommentDeleted" class="content">{{ comment.body }}</p>
     <div v-else class="deletedText">
       <p class="deleted">This comment has been deleted.</p>
-      <button @click="handleReturn" class="return" v-if="isCommentDeleted">Return</button>
+      <button @click="handleReturn" class="return">Return</button>
     </div>
 
     <div v-if="!isCommentDeleted" class="footer">
