@@ -1,17 +1,5 @@
 import { defineStore } from 'pinia'
-
-export type Post = {
-  id: number
-  title: string
-  body: string
-  tags: string[]
-  reactions: {
-    likes: number
-    dislikes: number
-  }
-  views: number
-  userId: number
-}
+import type { Post } from '~/util/types'
 
 const initialState: Post[] = []
 
@@ -24,6 +12,9 @@ export const usePostsStore = defineStore('posts', {
       const response = await fetch('https://dummyjson.com/posts?limit=5')
       const result = await response.json()
       this.posts = result.posts
+    },
+    async findPost(id: number) {
+      return this.posts.filter(p => p.id === id)
     },
     addLikePost(postId: number) {
       const post = this.posts.find(p => p.id === postId)

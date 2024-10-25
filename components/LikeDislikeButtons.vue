@@ -12,7 +12,8 @@
 </template>
 
 <script lang="ts" setup>
-import { usePostsStore, type Post } from '~/store/posts'
+import { usePostsStore } from '~/store/posts'
+import type { Post } from '~/util/types'
 
 const postStore = usePostsStore()
 

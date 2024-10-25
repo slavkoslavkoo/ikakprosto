@@ -1,5 +1,5 @@
 <template>
-  <li class="post">
+  <div class="post">
     <h1 class="postTitle">{{ post.title }}</h1>
 
     <p class="postBody">{{ post.body }}</p>
@@ -18,15 +18,12 @@
         <Tag v-for="tag in post.tags" :text="tag" />
       </div>
     </div>
-  </li>
+  </div>
 </template>
 
 <script lang="ts" setup>
-import { usePostsStore, type Post } from '~/store/posts'
 import Tag from './Tag.vue'
-import { ref } from 'vue'
-
-const postStore = usePostsStore()
+import type { Post } from '~/util/types'
 
 const props = defineProps<{ post: Post }>()
 </script>

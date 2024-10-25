@@ -1,10 +1,5 @@
 <template>
-  <NuxtLayout name="default">
-    <main class="container">
-      <h1 class="mainTitle">ikakprosto.ru</h1>
-      <NuxtPage />
-    </main>
-  </NuxtLayout>
+  <NuxtLayout name="default" />
 </template>
 
 <script setup lang="ts"></script>

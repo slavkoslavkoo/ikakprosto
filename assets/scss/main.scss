@@ -38,12 +38,13 @@ html {
   margin: 0 auto;
 }
 
-.postList {
-  margin: 3.2rem 0;
-}
-
-.mainTitle {
+.header {
   text-align: center;
-  color: var.$accent-orange;
-  font-size: x-large;
+  padding: 2.4rem 0;
+
+  .mainTitleLink {
+    color: var.$accent-orange;
+    font-size: 4.6rem;
+    font-weight: 600;
+  }
 }
