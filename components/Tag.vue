@@ -1,10 +1,10 @@
 <template>
-  <span>{{ tag }}</span>
+  <span class="tag">{{ text }}</span>
 </template>
 
 <script lang="ts" setup>
 const props = defineProps<{
-  tag: string
+  text: string
 }>()
 </script>
 

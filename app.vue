@@ -1,21 +1,9 @@
 <template>
   <main class="container">
-    <ul class="postList">
-      <Post v-for="post in posts" :key="post.id" :post="post" />
-    </ul>
+    <NuxtPage />
   </main>
 </template>
 
-<script setup lang="ts">
-import Post from './components/Post.vue'
-import { usePostsStore } from './store/posts'
+<script setup lang="ts"></script>
 
-const postStore = usePostsStore()
-await callOnce(postStore.fetchPosts)
-
-const posts = postStore.posts
-</script>
-
-<style lang="scss">
-@use '~/assets/scss/main.scss';
-</style>
+<style lang="scss"></style>

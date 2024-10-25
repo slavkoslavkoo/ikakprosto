@@ -20,7 +20,7 @@
   .bottom {
     display: flex;
     align-items: center;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     gap: 1.2rem;
 
     .likeDislikeBtns {
@@ -58,6 +58,33 @@
 
     .date {
       color: variables.$secondary-text;
+    }
+
+    .tags {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.2rem;
+
+      .initialTag {
+        width: 0;
+        height: 0;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+
+        border-right: 6px solid variables.$secondary-bg;
+        margin-right: -0.2rem;
+      }
+
+      .tag {
+        display: flex;
+        align-items: center;
+        background-color: variables.$secondary-bg;
+        padding: 0.2rem 1.2rem;
+
+        &:last-child {
+          border-radius: 0 0.4rem 0.4rem 0;
+        }
+      }
     }
   }
 }
