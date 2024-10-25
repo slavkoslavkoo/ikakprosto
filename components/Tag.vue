@@ -3,9 +3,7 @@
 </template>
 
 <script lang="ts" setup>
-const props = defineProps<{
-  text: string
-}>()
+const { text } = defineProps<{ text: string }>()
 </script>
 
 <style lang="scss">

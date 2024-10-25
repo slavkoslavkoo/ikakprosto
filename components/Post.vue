@@ -9,7 +9,9 @@
         <LikeDislikeButtons :post="post" />
       </div>
 
-      <NuxtLink :to="{ name: 'posts-id', params: { id: post.id } }" class="postLink">Open comments</NuxtLink>
+      <NuxtLink v-if="linkShow" :to="{ name: 'posts-id', params: { id: post.id } }" class="postLink"
+        >Open comments</NuxtLink
+      >
 
       <span class="date">Today</span>
 
@@ -25,7 +27,7 @@
 import Tag from './Tag.vue'
 import type { Post } from '~/util/types'
 
-const props = defineProps<{ post: Post }>()
+const props = defineProps<{ post: Post; linkShow: boolean }>()
 </script>
 
 <style lang="scss">

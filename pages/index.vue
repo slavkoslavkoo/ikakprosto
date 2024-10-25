@@ -1,7 +1,7 @@
 <template>
   <ul class="postList">
     <li class="postItem">
-      <Post v-for="post in posts" :key="post.id" :post="post" />
+      <Post :link-show="true" v-for="post in posts" :key="post.id" :post="post" />
     </li>
   </ul>
 </template>
