@@ -17,6 +17,26 @@
       .body {
         font-size: 2rem;
         margin-bottom: 1.2rem;
+
+        .name {
+          margin-bottom: 0.6rem;
+        }
+      }
+
+      .footer {
+        margin-top: 0.8rem;
+        font-size: 1.4rem;
+
+        .date {
+          color: var.$secondary-text;
+        }
+
+        .delete {
+          font-size: 1.4rem;
+          margin-left: 2.4rem;
+          text-decoration: underline;
+          color: var.$accent-liked;
+        }
       }
 
       .avatar {

@@ -5,16 +5,23 @@
 
   <div class="body">
     <h3 class="name">{{ comment.user.fullName }}</h3>
-    <p class="content">{{ comment.body }}</p>
+    <p v-if="!isCommentDeleted" class="content">{{ comment.body }}</p>
 
-    <div class="footer">
+    <div v-if="!isCommentDeleted" class="footer">
       <span class="date">Today</span>
+      <button @click="handleDelete" class="delete">Delete</button>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
 import type { Comment } from '~/util/types'
+
+const isCommentDeleted = ref(false)
+
+const handleDelete = () => {
+  isCommentDeleted.value = true
+}
 
 const { comment } = defineProps<{ comment: Comment }>()
 </script>

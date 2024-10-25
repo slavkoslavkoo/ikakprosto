@@ -111,3 +111,11 @@
     }
   }
 }
+
+@media (max-width: 43.75em) {
+  .post {
+    .bottom {
+      flex-direction: column;
+    }
+  }
+}
