@@ -1,4 +1,4 @@
-@use './variables.scss' as variables;
+@use './variables.scss' as var;
 
 * {
   margin: 0;
@@ -10,7 +10,7 @@ a:link,
 a:visited,
 a:hover,
 a:active {
-  color: variables.$primary-text;
+  color: var.$primary-text;
   text-decoration: none;
 }
 
@@ -29,8 +29,8 @@ button {
 html {
   font-family: sans-serif;
   font-size: 62.5%;
-  background-color: variables.$primary-bg;
-  color: variables.$primary-text;
+  background-color: var.$primary-bg;
+  color: var.$primary-text;
 }
 
 .container {
@@ -40,4 +40,10 @@ html {
 
 .postList {
   margin: 3.2rem 0;
+}
+
+.mainTitle {
+  text-align: center;
+  color: var.$accent-orange;
+  font-size: x-large;
 }

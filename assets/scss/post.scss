@@ -29,10 +29,28 @@
 
       .dislike {
         border-radius: 0 1.6rem 1.6rem 0;
+
+        &.disliked {
+          background-color: variables.$primary-text;
+          color: variables.$primary-bg;
+
+          .amount {
+            color: variables.$primary-bg;
+          }
+        }
       }
 
       .like {
         border-radius: 1.6rem 0 0 1.6rem;
+
+        &.liked {
+          color: variables.$primary-bg;
+          background-color: variables.$accent-liked;
+
+          .amount {
+            color: variables.$primary-bg;
+          }
+        }
       }
 
       .dislike,
@@ -42,7 +60,12 @@
         gap: 0.4rem;
         padding: 0.6rem 1.2rem;
         font-size: 1.4rem;
+        transition: background-color 0.2s linear;
         background-color: variables.$secondary-bg;
+
+        &:active {
+          transform: scale(0.99);
+        }
 
         .amount {
           margin-left: 0.4rem;

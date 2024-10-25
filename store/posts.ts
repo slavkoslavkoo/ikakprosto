@@ -34,7 +34,7 @@ export const usePostsStore = defineStore('posts', {
     removeLikePost(postId: number) {
       const post = this.posts.find(p => p.id === postId)
       if (post) {
-        post.reactions.dislikes--
+        post.reactions.likes = post.reactions.likes - 1
       }
     },
     addDislikePost(postId: number) {
@@ -46,7 +46,7 @@ export const usePostsStore = defineStore('posts', {
     removeDislikePost(postId: number) {
       const post = this.posts.find(p => p.id === postId)
       if (post) {
-        post.reactions.dislikes--
+        post.reactions.dislikes = post.reactions.dislikes - 1
       }
     },
   },

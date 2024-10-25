@@ -6,16 +6,7 @@
 
     <div class="bottom">
       <div class="likeDislikeBtns">
-        <button @click="toggleLikeClick" class="like" name="like">
-          <Icon name="mage:heart" mode="svg" size="1.6rem" />
-          <span>Like</span>
-          <span class="amount">{{ post.reactions.likes }}</span>
-        </button>
-        <button name="dislike" class="dislike">
-          <Icon name="mage:thumbs-down" mode="svg" size="1.6rem" />
-          <span>Trash</span>
-          <span class="amount">{{ post.reactions.dislikes }}</span>
-        </button>
+        <LikeDislikeButtons :post="post" />
       </div>
 
       <NuxtLink :to="{ name: 'posts-id', params: { id: post.id } }" class="postLink">Open comments</NuxtLink>
@@ -37,23 +28,7 @@ import { ref } from 'vue'
 
 const postStore = usePostsStore()
 
-const props = defineProps<{
-  post: Post
-}>()
-const isLikeClicked = ref(false)
-const isDislikeClicked = ref(false)
-
-const toggleLikeClick = () => {
-  if (!isLikeClicked.value) {
-    isLikeClicked.value = true
-    postStore.addLikePost(props.post.id)
-  } else {
-    isLikeClicked.value = false
-    postStore.removeLikePost(props.post.id)
-  }
-}
-
-console.log(props.post.reactions.likes)
+const props = defineProps<{ post: Post }>()
 </script>
 
 <style lang="scss">
